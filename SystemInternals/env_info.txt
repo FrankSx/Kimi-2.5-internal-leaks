@@ -1,0 +1,14 @@
+=== ENVIRONMENT VARIABLES ===
+HOME=/home/kimi
+LOGNAME=kimi
+MOTD_SHOWN=pam
+OLDPWD=/home/kimi
+PATH=/app/.kimi/skills/webapp-building/scripts/template/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PWD=/mnt/okcomputer
+SHELL=/bin/bash
+SHLVL=0
+SSH_CLIENT=172.24.112.12 57486 22
+SSH_CONNECTION=172.24.112.12 57486 10.182.45.105 22
+TZ=Asia/Shanghai
+USER=kimi
+_=/usr/bin/sh

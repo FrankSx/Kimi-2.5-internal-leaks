@@ -1,0 +1,24 @@
+=== NETWORK ===
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 10.182.45.105:34913     0.0.0.0:*               LISTEN      337/python3         
+tcp        0      0 10.182.45.105:53153     0.0.0.0:*               LISTEN      337/python3         
+tcp        0      0 10.182.45.105:35843     0.0.0.0:*               LISTEN      138/python3         
+tcp        0      0 127.0.0.1:9222          0.0.0.0:*               LISTEN      261/chromium        
+tcp        0      0 10.182.45.105:50727     0.0.0.0:*               LISTEN      337/python3         
+tcp        0      0 0.0.0.0:9223            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:10250         0.0.0.0:*               LISTEN      -                   
+tcp        0      0 10.182.45.105:10250     0.0.0.0:*               LISTEN      -                   
+tcp        0      0 10.182.45.105:33067     0.0.0.0:*               LISTEN      138/python3         
+tcp        0      0 10.182.45.105:37709     0.0.0.0:*               LISTEN      138/python3         
+tcp        0      0 127.0.0.1:42831         0.0.0.0:*               LISTEN      138/python3         
+tcp        0      0 10.182.45.105:45649     0.0.0.0:*               LISTEN      138/python3         
+tcp        0      0 10.182.45.105:39253     0.0.0.0:*               LISTEN      337/python3         
+tcp        0      0 10.182.45.105:58837     0.0.0.0:*               LISTEN      138/python3         
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 10.182.45.105:48215     0.0.0.0:*               LISTEN      337/python3         
+tcp        0      0 0.0.0.0:8888            0.0.0.0:*               LISTEN      51/python3          
+tcp        0      0 127.0.0.1:44543         0.0.0.0:*               LISTEN      337/python3         
+tcp        0      0 0.0.0.0:6080            0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::8080                 :::*                    LISTEN      -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   

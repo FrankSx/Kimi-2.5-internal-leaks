@@ -1,0 +1,261 @@
+=== PROCESS LIST ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0    440   104 ?        Ss   00:02   0:00 /package/admin/s6/command/s6-svscan -d4 -- /run/service
+root          17  0.0  0.0    216    76 ?        S    00:02   0:00 s6-supervise s6-linux-init-shutdownd
+root          20  0.0  0.0    204     4 ?        Ss   00:02   0:00 /package/admin/s6-linux-init/command/s6-linux-init-shutdownd -d3 -c /run/s6/basedir -g 3000 -C -B
+root          26  0.0  0.0    216    64 ?        S    00:02   0:00 s6-supervise s6rc-fdholder
+root          27  0.0  0.0    216    76 ?        S    00:02   0:00 s6-supervise kernel-server
+root          28  0.0  0.0    216    72 ?        S    00:02   0:00 s6-supervise socat
+root          29  0.0  0.0    216    76 ?        S    00:02   0:00 s6-supervise kasmvnc
+root          30  0.0  0.0    216    76 ?        S    00:02   0:00 s6-supervise s6rc-oneshot-runner
+root          31  0.0  0.0    216    76 ?        S    00:02   0:00 s6-supervise browser-guard
+root          32  0.0  0.0    216    72 ?        S    00:02   0:00 s6-supervise sshd
+kimi          51  0.2  1.9 804520 80724 ?        Ssl  00:02   0:02 python3 /app/kernel_server.py --host 0.0.0.0 --port 8888 --log-level info
+root          52  0.0  0.0    208    64 ?        Ss   00:02   0:00 /package/admin/s6/command/s6-ipcserverd -1 -- /package/admin/s6/command/s6-ipcserver-access -v0 -E -l0 -i data/rules -- /package/admin/s6/command/s6-sudod -t 30000 -- /package/admin/s6-rc/command/s6-rc-oneshot-run -l ../.. --
+kimi          53  0.1  1.8 342216 78320 ?        Ssl  00:02   0:01 python3 /app/browser_guard.py --wait-display --display :99 --timeout 60 --monitor
+root          56  0.0  0.0   4352  3280 ?        Ss   00:02   0:00 /bin/bash /root/setup_kasmvnc.sh
+root          59  0.0  0.2  15452  9120 ?        Ss   00:02   0:00 sshd: /usr/sbin/sshd -D -e [listener] 0 of 10-100 startups
+root          60  0.0  0.0  10336  3016 ?        Ss   00:02   0:00 /usr/bin/socat TCP-LISTEN:9223,reuseaddr,fork TCP:localhost:9222,nonblock
+root         116  0.0  2.2 357104 92844 ?        Sl   00:02   0:00 /usr/bin/Xvnc :99 -SecurityTypes None -AlwaysShared -DisableBasicAuth -publicIP 1.1.1.1 -MaxVideoResolution 1920x1080 -sslOnly 0 -ImprovedHextile 1 -CompareFB 2 -DynamicQualityMin 7 -RectThreads 0 -DLP_ClipSendMax 0 -QueryConnectTimeout 10 -AcceptSetDesktopSize 1 -PrintVideoArea 0 -DLP_RegionAllowClick 0 -QueryConnect 0 -SendCutText 1 -MaxDisconnectionTime 0 -DisconnectClients 0 -VideoOutTime 3 -IgnoreClientSettingsKasm 0 -AvoidShiftNumLock 0 -BlacklistThreshold 5 -DLP_ClipTypes chromium/x-web-custom-data,text/html,image/png -interface 0.0.0.0 -DLP_ClipAcceptMax 0 -DLP_ClipDelay 0 -AcceptPointerEvents 1 -UseIPv4 1 -MaxConnectionTime 0 -drinode /dev/dri/renderD128 -DLP_KeyRateLimit 0 -httpd /usr/share/kasmvnc/www -DynamicQualityMax 8 -fp /usr/share/fonts/X11//misc,/usr/share/fonts/X11//Type1 -DLP_Log off -JpegVideoQuality -1 -IdleTimeout 0 -desktop k2025964575489474561:99 (root) -VideoArea 45 -RawKeyboard 0 -SendPrimary 0 -websocketPort 6080 -UseIPv6 1 -AllowOverride AcceptPointerEvents,SendCutText,AcceptCutText,SendPrimary -VideoTime 5 -depth 24 -TreatLossless 10 -FrameRate 60 -http-header Cross-Origin-Embedder-Policy=require-corp -http-header Cross-Origin-Opener-Policy=same-origin -udpFullFrameFrequency 0 -geometry 1920x1080 -MaxIdleTime 0 -VideoScaling 2 -key /etc/ssl/private/ssl-cert-snakeoil.key -KasmPasswordFile /root/.kasmpasswd -cert /etc/ssl/certs/ssl-cert-snakeoil.pem -DLP_RegionAllowRelease 0 -Log *:stdout:30 -AcceptCutText 1 -WebpVideoQuality -1 -auth /root/.Xauthority -BlacklistTimeout 10 -AcceptKeyEvents 1 -rfbwait 30000 -rfbport 5901 -rfbauth /root/.vnc/passwd
+root         137  0.0  0.0   2912   928 ?        S    00:02   0:00 sleep infinity
+kimi         138  0.3  2.5 980108 105720 ?       Ssl  00:02   0:03 /usr/local/bin/python3 -m ipykernel_launcher -f /tmp/tmp341zt1s1.json
+kimi         157  0.2  2.4 1474588 102668 ?      Sl   00:02   0:02 /usr/local/lib/python3.12/site-packages/playwright/driver/node /usr/local/lib/python3.12/site-packages/playwright/driver/package/cli.js run-driver
+kimi         261  0.2  8.8 1461912708 372036 ?   Ssl  00:03   0:03 /usr/lib/chromium/chromium --show-component-extension-options --enable-gpu-rasterization --no-default-browser-check --disable-pings --media-router=0 --disable-dev-shm-usage --enable-remote-extensions --load-extension= about:blank --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --window-position=0,0 --remote-debugging-port=9222 --single-process --no-first-run --no-default-browser-check --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-breakpad --disable-component-extensions-with-background-pages --disable-dev-shm-usage --disable-features=TranslateUI --disable-ipc-flooding-protection --disable-renderer-backgrounding --enable-features=NetworkServiceInProcess2 --force-color-profile=srgb --metrics-recording-only --disable-blink-features=AutomationControlled --disable-infobars --mute-audio --enable-logging --log-file=/app/logs/chromium.log --no-sandbox --disable-gpu --load-extension=/app/pdf-viewer --js-flags="--max_old_space_size=1024" --proxy-server=10.86.13.73:5900 --user-data-dir=/app/data/chrome_data --remote-debugging-pipe
+kimi         277  0.0  0.1 50346732 4272 ?       Sl   00:03   0:00 /usr/lib/chromium/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --database=/home/kimi/.config/chromium/Crash Reports --annotation=channel=built on Debian GNU/Linux 12 (bookworm) --annotation=lsb-release=Debian GNU/Linux 12 (bookworm) --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=144.0.7559.109 --initial-client-fd=9 --shared-client-connection
+kimi         280  0.0  0.0 50338512 3976 ?       S    00:03   0:00 /usr/lib/chromium/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/kimi/.config/chromium/Crash Reports --annotation=channel=built on Debian GNU/Linux 12 (bookworm) --annotation=lsb-release=Debian GNU/Linux 12 (bookworm) --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=144.0.7559.109 --initial-client-fd=4 --shared-client-connection
+kimi         282  0.0  1.5 50692764 65436 ?      S    00:03   0:00 /usr/lib/chromium/chromium --type=zygote --no-zygote-sandbox --no-sandbox --enable-logging --crashpad-handler-pid=0 --enable-crash-reporter=,built on Debian GNU/Linux 12 (bookworm) --user-data-dir=/app/data/chrome_data --change-stack-guard-on-fork=enable
+kimi         283  0.0  1.5 50692764 65500 ?      S    00:03   0:00 /usr/lib/chromium/chromium --type=zygote --no-sandbox --enable-logging --crashpad-handler-pid=0 --enable-crash-reporter=,built on Debian GNU/Linux 12 (bookworm) --user-data-dir=/app/data/chrome_data --change-stack-guard-on-fork=enable
+kimi         337  0.2  2.5 980664 105956 ?       Ssl  00:03   0:02 /usr/local/bin/python3 -m ipykernel_launcher -f /tmp/tmpy50l0y6e.json
+root         375  0.0  0.2  17784 10876 ?        Ss   00:10   0:00 sshd: kimi [priv]
+kimi         381  0.0  0.1  18128  6740 ?        S    00:10   0:00 sshd: kimi@notty
+kimi         382  0.0  0.0   2652  1060 ?        Ss   00:10   0:00 /usr/lib/openssh/sftp-server
+root         413  0.0  0.2  17780 11116 ?        Ss   00:10   0:00 sshd: kimi [priv]
+kimi         419  0.0  0.1  18124  6840 ?        S    00:10   0:00 sshd: kimi@notty
+kimi         420  0.0  0.0   2652  1112 ?        Ss   00:10   0:00 /usr/lib/openssh/sftp-server
+root         439  0.0  0.2  17784 10856 ?        Ss   00:11   0:00 sshd: kimi [priv]
+kimi         445  0.0  0.1  18132  6928 ?        S    00:11   0:00 sshd: kimi@notty
+kimi         446  0.0  0.0   2652  1072 ?        Ss   00:11   0:00 /usr/lib/openssh/sftp-server
+root         452  0.0  0.2  17784 11104 ?        Ss   00:11   0:00 sshd: kimi [priv]
+kimi         458  0.0  0.1  18128  6876 ?        S    00:11   0:00 sshd: kimi@notty
+kimi         459  0.0  0.0   2652  1104 ?        Ss   00:11   0:00 /usr/lib/openssh/sftp-server
+root         485  0.0  0.2  17780 11104 ?        Ss   00:11   0:00 sshd: kimi [priv]
+kimi         491  0.0  0.1  18124  6996 ?        S    00:11   0:00 sshd: kimi@notty
+kimi         492  0.0  0.0   2652  1116 ?        Ss   00:11   0:00 /usr/lib/openssh/sftp-server
+root         505  0.0  0.2  17784 11064 ?        Ss   00:12   0:00 sshd: kimi [priv]
+kimi         511  0.0  0.1  18128  6880 ?        S    00:12   0:00 sshd: kimi@notty
+kimi         512  0.0  0.0   2652  1100 ?        Ss   00:12   0:00 /usr/lib/openssh/sftp-server
+root         751  0.0  0.2  17784 11068 ?        Ss   00:12   0:00 sshd: kimi [priv]
+kimi         757  0.0  0.1  18128  6888 ?        S    00:12   0:00 sshd: kimi@notty
+kimi         758  0.0  0.0   2652  1080 ?        Ss   00:12   0:00 /usr/lib/openssh/sftp-server
+root         760  0.0  0.2  17780 10496 ?        Ss   00:14   0:00 sshd: kimi [priv]
+root         761  0.0  0.2  17780 10752 ?        Ss   00:14   0:00 sshd: kimi [priv]
+kimi         773  0.0  0.1  18124  6780 ?        S    00:14   0:00 sshd: kimi@notty
+kimi         788  0.0  0.1  18124  6704 ?        S    00:14   0:00 sshd: kimi@notty
+kimi         794  0.0  0.0   2652  1100 ?        Ss   00:14   0:00 /usr/lib/openssh/sftp-server
+kimi         797  0.0  0.0   2652  1096 ?        Ss   00:14   0:00 /usr/lib/openssh/sftp-server
+root         813  0.0  0.2  17780 11124 ?        Ss   00:14   0:00 sshd: kimi [priv]
+root         814  0.0  0.2  17784 10772 ?        Ss   00:14   0:00 sshd: kimi [priv]
+kimi         826  0.0  0.1  18128  6720 ?        S    00:14   0:00 sshd: kimi@notty
+kimi         829  0.0  0.0   2652  1076 ?        Ss   00:14   0:00 /usr/lib/openssh/sftp-server
+kimi         842  0.0  0.1  18124  6900 ?        S    00:14   0:00 sshd: kimi@notty
+kimi         843  0.0  0.0   2652  1076 ?        Ss   00:14   0:00 /usr/lib/openssh/sftp-server
+root         848  0.0  0.2  17780 11116 ?        Ss   00:14   0:00 sshd: kimi [priv]
+root         851  0.0  0.2  17784 11100 ?        Ss   00:14   0:00 sshd: kimi [priv]
+kimi         862  0.0  0.1  18124  6832 ?        S    00:14   0:00 sshd: kimi@notty
+kimi         867  0.0  0.1  18128  6948 ?        S    00:14   0:00 sshd: kimi@notty
+kimi         869  0.0  0.0   2652  1088 ?        Ss   00:14   0:00 /usr/lib/openssh/sftp-server
+kimi         870  0.0  0.0   2652  1076 ?        Ss   00:14   0:00 /usr/lib/openssh/sftp-server
+root         904  0.0  0.2  17784 10772 ?        Ss   00:14   0:00 sshd: kimi [priv]
+kimi         910  0.0  0.1  18128  6700 ?        S    00:14   0:00 sshd: kimi@notty
+kimi         911  0.0  0.0   2652  1084 ?        Ss   00:14   0:00 /usr/lib/openssh/sftp-server
+root         953  0.0  0.2  17784 10864 ?        Ss   00:14   0:00 sshd: kimi [priv]
+root         956  0.0  0.2  17784 10812 ?        Ss   00:14   0:00 sshd: kimi [priv]
+kimi         966  0.0  0.1  18128  6784 ?        S    00:14   0:00 sshd: kimi@notty
+kimi         969  0.0  0.0   2652  1088 ?        Ss   00:14   0:00 /usr/lib/openssh/sftp-server
+kimi        1017  0.0  0.1  18128  6732 ?        S    00:14   0:00 sshd: kimi@notty
+kimi        1018  0.0  0.0   2652  1052 ?        Ss   00:14   0:00 /usr/lib/openssh/sftp-server
+root        1050  0.0  0.2  17784 10848 ?        Ss   00:15   0:00 sshd: kimi [priv]
+kimi        1068  0.0  0.1  18128  6804 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1071  0.0  0.0   2652  1084 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+root        1079  0.0  0.2  17784 10820 ?        Ss   00:15   0:00 sshd: kimi [priv]
+kimi        1085  0.0  0.1  18128  6752 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1086  0.0  0.0   2652  1100 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+root        1088  0.0  0.2  17784 10912 ?        Ss   00:15   0:00 sshd: kimi [priv]
+root        1091  0.0  0.2  17780 10764 ?        Ss   00:15   0:00 sshd: kimi [priv]
+kimi        1100  0.0  0.1  18128  6880 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1110  0.0  0.1  18124  6684 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1116  0.0  0.0   2652  1088 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+kimi        1117  0.0  0.0   2652  1116 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+root        1131  0.0  0.2  17780 11064 ?        Ss   00:15   0:00 sshd: kimi [priv]
+root        1133  0.0  0.2  17780 10936 ?        Ss   00:15   0:00 sshd: kimi [priv]
+kimi        1139  0.0  0.1  18124  6968 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1144  0.0  0.1  18124  6800 ?        S    00:15   0:00 sshd: kimi@notty
+root        1145  0.0  0.2  17784 10892 ?        Ss   00:15   0:00 sshd: kimi [priv]
+kimi        1147  0.0  0.0   2652  1124 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+kimi        1148  0.0  0.0   2652  1116 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+kimi        1155  0.0  0.1  18128  6700 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1160  0.0  0.0   2652  1100 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+root        1165  0.0  0.2  17780 11092 ?        Ss   00:15   0:00 sshd: kimi [priv]
+kimi        1171  0.0  0.1  18124  6852 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1172  0.0  0.0   2652  1084 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+root        1175  0.0  0.2  17784 10860 ?        Ss   00:15   0:00 sshd: kimi [priv]
+root        1177  0.0  0.2  17784 10944 ?        Ss   00:15   0:00 sshd: kimi [priv]
+root        1178  0.0  0.2  17784 10904 ?        Ss   00:15   0:00 sshd: kimi [priv]
+root        1181  0.0  0.2  17784 11056 ?        Ss   00:15   0:00 sshd: kimi [priv]
+kimi        1187  0.0  0.1  18128  6776 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1192  0.0  0.1  18128  6732 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1197  0.0  0.1  18128  6872 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1198  0.0  0.0   2652  1076 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+kimi        1199  0.0  0.0   2652  1072 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+kimi        1201  0.0  0.0   2652  1056 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+kimi        1208  0.0  0.1  18128  7000 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1215  0.0  0.0   2652  1124 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+root        1219  0.0  0.2  17780 10928 ?        Ss   00:15   0:00 sshd: kimi [priv]
+root        1221  0.0  0.2  17780 11044 ?        Ss   00:15   0:00 sshd: kimi [priv]
+kimi        1227  0.0  0.1  18124  6712 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1232  0.0  0.1  18124  7076 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1235  0.0  0.0   2652  1104 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+kimi        1236  0.0  0.0   2652  1084 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+root        1252  0.0  0.2  17784 10884 ?        Ss   00:15   0:00 sshd: kimi [priv]
+kimi        1258  0.0  0.1  18128  6704 ?        S    00:15   0:00 sshd: kimi@notty
+kimi        1261  0.0  0.0   2652  1096 ?        Ss   00:15   0:00 /usr/lib/openssh/sftp-server
+root        1361  0.0  0.2  17784 11044 ?        Ss   00:16   0:00 sshd: kimi [priv]
+root        1362  0.0  0.2  17780 10988 ?        Ss   00:16   0:00 sshd: kimi [priv]
+root        1363  0.0  0.2  17784 11032 ?        Ss   00:16   0:00 sshd: kimi [priv]
+kimi        1373  0.0  0.1  18128  7012 ?        S    00:16   0:00 sshd: kimi@notty
+kimi        1380  0.0  0.1  18124  6784 ?        S    00:16   0:00 sshd: kimi@notty
+kimi        1381  0.0  0.1  18128  7024 ?        S    00:16   0:00 sshd: kimi@notty
+kimi        1382  0.0  0.0   2652  1056 ?        Ss   00:16   0:00 /usr/lib/openssh/sftp-server
+kimi        1383  0.0  0.0   2652  1108 ?        Ss   00:16   0:00 /usr/lib/openssh/sftp-server
+kimi        1384  0.0  0.0   2652  1092 ?        Ss   00:16   0:00 /usr/lib/openssh/sftp-server
+root        1389  0.0  0.2  17780 10844 ?        Ss   00:16   0:00 sshd: kimi [priv]
+root        1390  0.0  0.2  17780 10752 ?        Ss   00:16   0:00 sshd: kimi [priv]
+kimi        1401  0.0  0.1  18124  6792 ?        S    00:16   0:00 sshd: kimi@notty
+kimi        1402  0.0  0.1  18124  6704 ?        S    00:16   0:00 sshd: kimi@notty
+kimi        1403  0.0  0.0   2652  1076 ?        Ss   00:16   0:00 /usr/lib/openssh/sftp-server
+kimi        1404  0.0  0.0   2652  1088 ?        Ss   00:16   0:00 /usr/lib/openssh/sftp-server
+root        1405  0.0  0.2  17780 10916 ?        Ss   00:16   0:00 sshd: kimi [priv]
+kimi        1420  0.0  0.1  18124  6696 ?        S    00:16   0:00 sshd: kimi@notty
+kimi        1441  0.0  0.0   2652  1128 ?        Ss   00:16   0:00 /usr/lib/openssh/sftp-server
+root        2040  0.0  0.2  17784 10852 ?        Ss   00:16   0:00 sshd: kimi [priv]
+root        2043  0.0  0.2  17784 10780 ?        Ss   00:16   0:00 sshd: kimi [priv]
+root        2045  0.0  0.2  17780 11008 ?        Ss   00:16   0:00 sshd: kimi [priv]
+kimi        2056  0.0  0.1  18128  6768 ?        S    00:16   0:00 sshd: kimi@notty
+kimi        2061  0.0  0.1  18128  6712 ?        S    00:16   0:00 sshd: kimi@notty
+kimi        2066  0.0  0.1  18124  7032 ?        S    00:16   0:00 sshd: kimi@notty
+kimi        2068  0.0  0.0   2652  1124 ?        Ss   00:16   0:00 /usr/lib/openssh/sftp-server
+kimi        2069  0.0  0.0   2652  1056 ?        Ss   00:16   0:00 /usr/lib/openssh/sftp-server
+kimi        2077  0.0  0.0   2652  1100 ?        Ss   00:16   0:00 /usr/lib/openssh/sftp-server
+root        2084  0.0  0.2  17780 10980 ?        Ss   00:16   0:00 sshd: kimi [priv]
+root        2085  0.0  0.2  17784 10840 ?        Ss   00:16   0:00 sshd: kimi [priv]
+kimi        2094  0.0  0.1  18124  6728 ?        S    00:16   0:00 sshd: kimi@notty
+kimi        2097  0.0  0.1  18128  6768 ?        S    00:16   0:00 sshd: kimi@notty
+kimi        2100  0.0  0.0   2652  1112 ?        Ss   00:16   0:00 /usr/lib/openssh/sftp-server
+kimi        2101  0.0  0.0   2652  1112 ?        Ss   00:16   0:00 /usr/lib/openssh/sftp-server
+root        2102  0.0  0.2  17780 10936 ?        Ss   00:16   0:00 sshd: kimi [priv]
+kimi        2121  0.0  0.1  18124  6848 ?        S    00:16   0:00 sshd: kimi@notty
+kimi        2122  0.0  0.0   2652  1120 ?        Ss   00:16   0:00 /usr/lib/openssh/sftp-server
+root        2125  0.0  0.2  17780 10896 ?        Ss   00:17   0:00 sshd: kimi [priv]
+kimi        2131  0.0  0.1  18124  6716 ?        S    00:17   0:00 sshd: kimi@notty
+root        2132  0.0  0.2  17784 11068 ?        Ss   00:17   0:00 sshd: kimi [priv]
+root        2134  0.0  0.2  17780 11024 ?        Ss   00:17   0:00 sshd: kimi [priv]
+kimi        2138  0.0  0.0   2652  1096 ?        Ss   00:17   0:00 /usr/lib/openssh/sftp-server
+kimi        2143  0.0  0.1  18128  6908 ?        S    00:17   0:00 sshd: kimi@notty
+kimi        2150  0.0  0.1  18124  6964 ?        S    00:17   0:00 sshd: kimi@notty
+kimi        2156  0.0  0.0   2652  1076 ?        Ss   00:17   0:00 /usr/lib/openssh/sftp-server
+kimi        2157  0.0  0.0   2652  1112 ?        Ss   00:17   0:00 /usr/lib/openssh/sftp-server
+root        2166  0.0  0.2  17780 10872 ?        Ss   00:17   0:00 sshd: kimi [priv]
+root        2167  0.0  0.2  17780 11012 ?        Ss   00:17   0:00 sshd: kimi [priv]
+root        2169  0.0  0.2  17776 10944 ?        Ss   00:17   0:00 sshd: kimi [priv]
+kimi        2178  0.0  0.1  18124  6792 ?        S    00:17   0:00 sshd: kimi@notty
+kimi        2190  0.0  0.1  18124  6952 ?        S    00:17   0:00 sshd: kimi@notty
+kimi        2192  0.0  0.1  18120  6864 ?        S    00:17   0:00 sshd: kimi@notty
+kimi        2194  0.0  0.0   2652  1104 ?        Ss   00:17   0:00 /usr/lib/openssh/sftp-server
+kimi        2195  0.0  0.0   2652  1076 ?        Ss   00:17   0:00 /usr/lib/openssh/sftp-server
+kimi        2205  0.0  0.0   2652  1088 ?        Ss   00:17   0:00 /usr/lib/openssh/sftp-server
+root        2209  0.0  0.2  17784 11008 ?        Ss   00:17   0:00 sshd: kimi [priv]
+kimi        2220  0.0  0.1  18128  6988 ?        S    00:17   0:00 sshd: kimi@notty
+kimi        2222  0.0  0.0   2652  1096 ?        Ss   00:17   0:00 /usr/lib/openssh/sftp-server
+root        2230  0.0  0.2  17784 11036 ?        Ss   00:18   0:00 sshd: kimi [priv]
+root        2231  0.0  0.2  17784 10976 ?        Ss   00:18   0:00 sshd: kimi [priv]
+kimi        2238  0.0  0.1  18128  6952 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        2243  0.0  0.1  18128  6956 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        2244  0.0  0.0   2652  1072 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+kimi        2245  0.0  0.0   2652  1100 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+root        2254  0.0  0.2  17776 10924 ?        Ss   00:18   0:00 sshd: kimi [priv]
+root        2255  0.0  0.2  17780 11040 ?        Ss   00:18   0:00 sshd: kimi [priv]
+root        2256  0.0  0.2  17780 10900 ?        Ss   00:18   0:00 sshd: kimi [priv]
+kimi        2267  0.0  0.1  18120  6920 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        2269  0.0  0.1  18124  6876 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        2274  0.0  0.1  18124  6884 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        2275  0.0  0.0   2652  1096 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+kimi        2276  0.0  0.0   2652  1088 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+kimi        2277  0.0  0.0   2652  1100 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+root        2287  0.0  0.2  17784 10972 ?        Ss   00:18   0:00 sshd: kimi [priv]
+kimi        2300  0.0  0.1  18128  6740 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        2302  0.0  0.0   2652  1072 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+root        2303  0.0  0.2  17780 11072 ?        Ss   00:18   0:00 sshd: kimi [priv]
+kimi        2315  0.0  0.1  18124  6856 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        2316  0.0  0.0   2652  1088 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+root        3477  0.0  0.2  17780 10912 ?        Ss   00:18   0:00 sshd: kimi [priv]
+kimi        3491  0.0  0.1  18124  6736 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        3498  0.0  0.0   2652  1060 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+root        3510  0.0  0.2  17784 10832 ?        Ss   00:18   0:00 sshd: kimi [priv]
+root        3511  0.0  0.2  17784 10828 ?        Ss   00:18   0:00 sshd: kimi [priv]
+root        3514  0.0  0.2  17784 10980 ?        Ss   00:18   0:00 sshd: kimi [priv]
+kimi        3524  0.0  0.1  18128  6708 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        3525  0.0  0.1  18128  6704 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        3530  0.0  0.1  18128  6812 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        3531  0.0  0.0   2652  1072 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+kimi        3532  0.0  0.0   2652  1080 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+kimi        3533  0.0  0.0   2652  1072 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+root        3542  0.0  0.2  17780 10840 ?        Ss   00:18   0:00 sshd: kimi [priv]
+root        3543  0.0  0.2  17780 11088 ?        Ss   00:18   0:00 sshd: kimi [priv]
+kimi        3553  0.0  0.1  18124  6700 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        3555  0.0  0.1  18124  6920 ?        S    00:18   0:00 sshd: kimi@notty
+kimi        3556  0.0  0.0   2652  1112 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+kimi        3557  0.0  0.0   2652  1108 ?        Ss   00:18   0:00 /usr/lib/openssh/sftp-server
+root        3567  0.0  0.2  17784 10868 ?        Ss   00:19   0:00 sshd: kimi [priv]
+root        3569  0.0  0.2  17784 11016 ?        Ss   00:19   0:00 sshd: kimi [priv]
+root        3572  0.0  0.2  17776 10864 ?        Ss   00:19   0:00 sshd: kimi [priv]
+kimi        3576  0.0  0.1  18128  6728 ?        S    00:19   0:00 sshd: kimi@notty
+kimi        3582  0.0  0.1  18128  6932 ?        S    00:19   0:00 sshd: kimi@notty
+kimi        3583  0.0  0.0   2652  1088 ?        Ss   00:19   0:00 /usr/lib/openssh/sftp-server
+kimi        3588  0.0  0.1  18120  6852 ?        S    00:19   0:00 sshd: kimi@notty
+kimi        3589  0.0  0.0   2652  1088 ?        Ss   00:19   0:00 /usr/lib/openssh/sftp-server
+kimi        3590  0.0  0.0   2584   892 ?        Ss   00:19   0:00 sh -c tar -czf /mnt/okcomputer/output/kimi_full_backup.tar.gz -C /app .kimi 2>&1
+kimi        3591  1.0  0.0   4296  2652 ?        S    00:19   0:01 tar -czf /mnt/okcomputer/output/kimi_full_backup.tar.gz -C /app .kimi
+kimi        3592  0.0  0.0   2584   904 ?        S    00:19   0:00 /bin/sh -c gzip
+kimi        3593 19.2  0.0   3212  1756 ?        S    00:19   0:18 gzip
+kimi        3596  0.0  0.0   2652  1076 ?        Ss   00:19   0:00 /usr/lib/openssh/sftp-server
+root        3599  0.1  0.2  17776 10824 ?        Ss   00:20   0:00 sshd: kimi [priv]
+root        3600  0.0  0.2  17784 11008 ?        Ss   00:20   0:00 sshd: kimi [priv]
+root        3601  0.1  0.2  17776 10860 ?        Ss   00:20   0:00 sshd: kimi [priv]
+root        3602  0.1  0.2  17780 10972 ?        Ss   00:20   0:00 sshd: kimi [priv]
+root        3604  0.1  0.2  17784 10824 ?        Ss   00:20   0:00 sshd: kimi [priv]
+kimi        3615  0.0  0.1  18124  6756 ?        S    00:20   0:00 sshd: kimi@notty
+kimi        3620  0.0  0.1  18120  6792 ?        S    00:20   0:00 sshd: kimi@notty
+kimi        3625  0.0  0.1  18120  6780 ?        S    00:20   0:00 sshd: kimi@notty
+kimi        3628  0.0  0.1  18128  6728 ?        S    00:20   0:00 sshd: kimi@notty
+kimi        3633  0.0  0.1  18128  6804 ?        S    00:20   0:00 sshd: kimi@notty
+kimi        3634  0.0  0.0   2652  1076 ?        Ss   00:20   0:00 /usr/lib/openssh/sftp-server
+kimi        3635  0.0  0.0   2652  1088 ?        Ss   00:20   0:00 /usr/lib/openssh/sftp-server
+kimi        3636  0.0  0.0   2652  1132 ?        Ss   00:20   0:00 /usr/lib/openssh/sftp-server
+kimi        3637  0.0  0.0   2652  1092 ?        Ss   00:20   0:00 /usr/lib/openssh/sftp-server
+kimi        3638  0.0  0.0   2652  1084 ?        Ss   00:20   0:00 /usr/lib/openssh/sftp-server
+root        3656  7.6  0.2  17784 11012 ?        Ss   00:21   0:00 sshd: kimi [priv]
+root        3657  3.8  0.2  17780 10948 ?        Ss   00:21   0:00 sshd: kimi [priv]
+root        3658  4.0  0.2  17780 11036 ?        Ss   00:21   0:00 sshd: kimi [priv]
+kimi        3670  0.0  0.1  18128  6908 ?        S    00:21   0:00 sshd: kimi@notty
+kimi        3672  0.0  0.1  18124  6852 ?        S    00:21   0:00 sshd: kimi@notty
+root        3676 15.3  0.2  17776 10868 ?        Ss   00:21   0:00 sshd: kimi [priv]
+kimi        3677  0.0  0.1  18124  6936 ?        S    00:21   0:00 sshd: kimi@notty
+kimi        3678  0.0  0.0   2652  1132 ?        Ss   00:21   0:00 /usr/lib/openssh/sftp-server
+root        3680 20.0  0.2  17784 11008 ?        Ss   00:21   0:00 sshd: kimi [priv]
+root        3681 10.0  0.2  17784 11224 ?        Ss   00:21   0:00 sshd: kimi [priv]
+kimi        3683  0.0  0.0   2652  1076 ?        Ss   00:21   0:00 /usr/lib/openssh/sftp-server
+kimi        3688  0.0  0.0   2652  1080 ?        Ss   00:21   0:00 /usr/lib/openssh/sftp-server
+kimi        3695  0.0  0.1  18120  6640 ?        S    00:21   0:00 sshd: kimi
+kimi        3700  0.0  0.0   2584   884 ?        Ss   00:21   0:00 sh -c echo "=== PROCESS LIST ===" > /mnt/okcomputer/output/ctf_info/processes.txt && ps aux >> /mnt/okcomputer/output/ctf_info/processes.txt
+kimi        3701  0.0  0.1   8244  4428 ?        R    00:21   0:00 ps aux
+kimi        3702  0.0  0.1  18128  6592 ?        S    00:21   0:00 sshd: kimi
